@@ -84,6 +84,56 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/user',
+    component: Layout,
+    meta: { title: '用户管理', icon: 'user' },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/user/index'),
+        name: 'UserIndex',
+        meta: { title: '用户列表' }
+      },
+      {
+        path: 'honor',
+        component: () => import('@/views/user/index'),
+        name: 'UserHonor',
+        meta: { title: '头衔管理' }
+      },
+      {
+        path: 'interest',
+        component: () => import('@/views/user/index'),
+        name: 'UserInterest',
+        meta: { title: '用户兴趣标签' }
+      }
+    ]
+  },
+  {
+    path: '/config',
+    component: Layout,
+    meta: { title: '杂项管理', icon: 'setting' },
+    children: [
+      {
+        path: 'banner',
+        component: () => import('@/views/banner/index'),
+        name: 'BannerIndex',
+        meta: { title: 'Banner管理' }
+      }
+      /*      {
+        path: 'config',
+        component: () => import('@/views/config/index'),
+        name: 'ConfigIndex',
+        meta: { title: '动态参数管理' }
+      },
+      {
+        path: 'app',
+        component: () => import('@/views/app/index'),
+        name: 'AppIndex',
+        meta: { title: 'APP版本控制' }
+      }*/
+    ]
+  },
+  {
     path: '/documentation',
     component: Layout,
     children: [
@@ -91,7 +141,7 @@ export const constantRoutes = [
         path: 'index',
         component: () => import('@/views/documentation/index'),
         name: 'Documentation',
-        meta: { title: 'Documentation', icon: 'documentation', affix: true }
+        meta: { title: 'Documentation', icon: 'documentation' }
       }
     ]
   },
